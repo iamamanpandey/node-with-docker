@@ -18,9 +18,13 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 
 //routes middleware
-app.use("/api",(req, res)=>{
-res.json("hello gdggdgd aman")
-}, postRoutes);
+app.use(
+  "/api",
+  (req, res) => {
+    res.json("hello gdggdgd aman");
+  },
+  postRoutes
+);
 app.use("/api", authRoutes);
 
 //port
