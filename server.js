@@ -18,7 +18,9 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 
 //routes middleware
-app.use("/api", postRoutes);
+app.use("/api",(req, res)=>{
+res.json("hello gdggdgd aman")
+}, postRoutes);
 app.use("/api", authRoutes);
 
 //port
@@ -30,7 +32,7 @@ mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
     app.listen(PORT, () =>
-      console.log(`Server Running on Port:http://localhost:${PORT}`)
+      console.log(`Server Running on  Port:http://localhost:${PORT}`)
     )
   )
   .catch((error) => console.log(`${error} did not connect`));
